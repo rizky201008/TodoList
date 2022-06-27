@@ -13,7 +13,7 @@ public class AddActivity extends AppCompatActivity {
 
     Model item = null;
     EditText todoTitle, todoDescription;
-    ImageView btn_save;
+    ImageView btn_save, btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,14 @@ public class AddActivity extends AppCompatActivity {
         todoTitle = findViewById(R.id.et_kegiatan);
         todoDescription = findViewById(R.id.et_description);
         btn_save = findViewById(R.id.save_btn);
+        btn_back = findViewById(R.id.back_btn);
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         if(getIntent().getExtras()!=null){
             item = new Model(getIntent().getExtras().getInt("id"),
@@ -75,7 +83,7 @@ public class AddActivity extends AppCompatActivity {
             contentValues.put("description", todoDescription.getText().toString().trim());
             String[] selectionArgs = {item.getTodoId()+""};
 
-            long id = dbManager.Update(contentValues,"_id=?", selectionArgs);
+            long id = dbManager.Update(contentValues,"id=?", selectionArgs);
 
             if (id > 0) {
                 Toast.makeText(this, "Aktifitas di ubah", Toast.LENGTH_SHORT).show();
