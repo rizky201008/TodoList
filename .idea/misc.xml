@@ -4,11 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/drawable/bg_form_add.xml" value="0.168" />
+        <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/drawable/bg_save.xml" value="0.117" />
         <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/drawable/card_search.xml" value="0.1945" />
         <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2115" />
-        <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/layout/activity_add.xml" value="0.22" />
+        <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/drawable/ic_baseline_check_circle_24.xml" value="0.117" />
+        <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/drawable/ic_baseline_save_24.xml" value="0.117" />
+        <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/drawable/ic_undraw_not_found_re_x4in.xml" value="0.117" />
+        <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/layout/activity_add.xml" value="0.16" />
         <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/layout/item_model.xml" value="0.25" />
+        <entry key="..\:/Users/entho/AndroidStudioProjects/TodoList/app/src/main/res/layout/item_model.xml" value="0.22" />
       </map>
     </option>
   </component>
