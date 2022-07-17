@@ -43,7 +43,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         return todoList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder{
         TextView title;
         TextView description;
         ImageView edit, done;
@@ -55,25 +55,23 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
             edit = itemView.findViewById(R.id.btn_edit);
             done = itemView.findViewById(R.id.btn_done);
 
-            edit.setOnClickListener(this);
-            done.setOnClickListener(this);
-        }
-
-
-        @Override
-        public void onClick(View v) {
-            if(v.getId() == R.id.btn_edit){
-                Intent intent = new Intent(context, AddActivity.class);
-                intent.putExtra("title", todoList.get(getAdapterPosition()).getTitle());
-                intent.putExtra("description", todoList.get(getAdapterPosition()).getDescription());
-                intent.putExtra("id",todoList.get(getAdapterPosition()).getTodoId());
-                context.startActivity(intent);
-            }
-            else if(v.getId() == R.id.btn_done){
-                deleteTodo(todoList.get(getAdapterPosition()));
-                ((MainActivity)context).LoadQuery();
-            }
-
+            edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, AddActivity.class);
+                    intent.putExtra("title", todoList.get(getAdapterPosition()).getTitle());
+                    intent.putExtra("description", todoList.get(getAdapterPosition()).getDescription());
+                    intent.putExtra("id",todoList.get(getAdapterPosition()).getTodoId());
+                    context.startActivity(intent);
+                }
+            });
+            done.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    deleteTodo(todoList.get(getAdapterPosition()));
+                    ((MainActivity)context).LoadQuery();
+                }
+            });
         }
 
         public void deleteTodo(Model item) {
